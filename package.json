@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "prepare-client":"cd client && yarn && yarn dev",
-    "prepare-server":"cd server && yarn",
+    "prepare-client": "cd client && yarn && yarn dev",
+    "prepare-server": "cd server && yarn",
     "start": "cd server && yarn start"
   }
 }
