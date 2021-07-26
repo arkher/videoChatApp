@@ -5,8 +5,10 @@ A simple video chat application for multi-users based on React, Node Express and
 **Technologies Used**
 
 - Vite js
+- Typescript
 - React
-- Node + Express
+- NodeJS
+- Express
 - WebRTC
 - Socket.io
 - [Syled-components](https://styled-components.com/)
