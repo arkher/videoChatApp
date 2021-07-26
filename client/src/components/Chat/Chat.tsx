@@ -3,7 +3,7 @@ import socket from '../../socket';
 import { BottomInput, ChatArea, ChatContainer, Message, MessageList, TopHeader, UserMessage } from './styles';
 
 interface ChatProps {
-  display: string;
+  display: boolean;
   roomId: number;
 }
 

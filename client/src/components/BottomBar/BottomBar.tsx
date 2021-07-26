@@ -2,12 +2,12 @@ import React, { ReactElement, useCallback } from 'react';
 import { Bar, CameraButton, Center, ChatButton, FaIcon, Left, Right, ScreenButton, StopButton, SwitchList, SwitchMenu } from './styles';
 
 interface BottomBarProps {
-  clickChat: () => void,
-  goToBack: () => void,
-  toggleCameraAudio: () => void,
+  clickChat: (e: any) => void,
+  goToBack: (e: any) => void,
+  toggleCameraAudio: (e: any) => void,
   userVideoAudio: any,
   clickScreenSharing: () => void,
-  screenShare: string,
+  screenShare: boolean,
   videoDevices: any,
   showVideoDevices: boolean,
   setShowVideoDevices: (state: boolean) => void
