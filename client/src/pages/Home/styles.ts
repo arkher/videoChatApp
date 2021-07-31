@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: red;
 `;
 
 export const Row = styled.div`
@@ -29,7 +28,7 @@ export const Input = styled.input`
 export const Error = styled.div`
   margin-top: 10px;
   font-size: 20px;
-  color: #e85a71;
+  color: #942436;
 `;
 
 export const JoinButton = styled.button`
@@ -39,7 +38,7 @@ export const JoinButton = styled.button`
   border: none;
   border-radius: 15px;
   color: #d8e9ef;
-  background-color: #4ea1d3;
+  background-color: #5CA6D8;
   font-size: 25px;
   font-weight: 500;
 
