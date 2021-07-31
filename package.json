@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "start-client": "cd client && yarn && yarn dev",
+    "start-server": "cd server && yarn && yarn start",
     "prepare-client": "cd client && yarn && yarn dev",
     "prepare-server": "cd server && yarn",
     "start": "cd server && yarn start",
