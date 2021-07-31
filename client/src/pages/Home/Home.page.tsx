@@ -14,8 +14,6 @@ const Home = (props: HomeProps): React.ReactElement => {
   const [errMsg, setErrMsg] = useState('');
 
   useEffect(() => {
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-    
     socket.on('FE-error-user-exist', ({ error }) => {
       if (!error) {
         const roomName = roomRef.current.value;
