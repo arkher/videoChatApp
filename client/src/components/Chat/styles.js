@@ -4,7 +4,7 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 25%;
-  height: 100%;
+  hieght: 100%;
   background-color: white;
   transition: all 0.5s ease;
   overflow: hidden;

@@ -28,7 +28,7 @@ export const Input = styled.input`
 export const Error = styled.div`
   margin-top: 10px;
   font-size: 20px;
-  color: #942436;
+  color: #9E3748;
 `;
 
 export const JoinButton = styled.button`
@@ -37,8 +37,8 @@ export const JoinButton = styled.button`
   outline: none;
   border: none;
   border-radius: 15px;
-  color: #d8e9ef;
-  background-color: #5CA6D8;
+  color: #FFFFFF;
+  background-color: #91D5FF;
   font-size: 25px;
   font-weight: 500;
 

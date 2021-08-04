@@ -1,11 +1,9 @@
 # Video-Group-Meeting
 
-A simple video chat application for multi-users based on React, Node Express and WebRTC.
+Basic video chat application based on React, Node Express and WebRTC.
 
-**Technologies Used**
+**Tools and Technologies**
 
-- Vite js
-- Typescript
 - React
 - NodeJS
 - Express
@@ -30,18 +28,17 @@ A simple video chat application for multi-users based on React, Node Express and
 
 ### Setup
 **Client**
-After moving to server folder:
-To install dependencies: ```yarn```
-To run: ```yarn dev```
+To install dependencies: ```yarn prepare-client```
+To run: ```yarn start-client```
 
 **Server**
-After moving to server folder:
-To install dependencies: ```yarn```
-To run: ```yarn start```
+To install dependencies: ```yarn prepare-server```
+To run: ```yarn start-server```
 
-## Todo 🔨🔨🔨
+## Todo list
 
+- [ ] Dockerize
 - [ ] List of contacts
-
-## License
-[MIT License](./LICENSE)
+- [ ] Room page refactoring
+- [ ] Update libs
+- [ ] Server refactoring

@@ -1,19 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import socket from '../../socket';
 import { Error, Input, JoinButton, Label, MainContainer, Row } from './styles';
-import { History, LocationState } from "history";
 
-interface HomeProps {
-  history: History<LocationState>
-}
-
-const Home = (props: HomeProps): React.ReactElement => {
-  const roomRef = useRef<any>();
-  const userRef = useRef<any>();
+const Home = (props) => {
+  const roomRef = useRef();
+  const userRef = useRef();
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
 
   useEffect(() => {
+
     socket.on('FE-error-user-exist', ({ error }) => {
       if (!error) {
         const roomName = roomRef.current.value;
@@ -56,4 +52,4 @@ const Home = (props: HomeProps): React.ReactElement => {
   );
 };
 
-export {Home};
+export default Home;

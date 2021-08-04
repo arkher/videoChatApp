@@ -12,10 +12,10 @@ export const Bar = styled.div`
   font-weight: 500;
   background-color: #4ea1d3;
 `;
-
 export const Left = styled.div`
   display: flex;
   align-items: center;
+
   margin-left: 15px;
 `;
 
@@ -27,24 +27,7 @@ export const Center = styled.div`
 
 export const Right = styled.div``;
 
-export const ChatButton = styled.div`
-  width: 75px;
-  border: none;
-  font-size: 0.9375rem;
-  padding: 5px;
-
-  :hover {
-    background-color: #77b7dd;
-    cursor: pointer;
-    border-radius: 15px;
-  }
-
-  * {
-    pointer-events: none;
-  }
-`;
-
-export const ScreenButton = styled.div`
+export const ShareScreenButton = styled.div`
   width: auto;
   border: none;
   font-size: 0.9375rem;
@@ -53,7 +36,7 @@ export const ScreenButton = styled.div`
   :hover {
     background-color: #77b7dd;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 4px;
   }
 
   .sharing {
@@ -74,15 +57,15 @@ export const StopButton = styled.div`
   line-height: 30px;
   margin-right: 15px;
   background-color: #ee2560;
-  border-radius: 15px;
+  border-radius: 4px;
 
   :hover {
     background-color: #f25483;
     cursor: pointer;
   }
-  `;
+`;
 
-  export const CameraButton = styled.div`
+export const Button = styled.div`
   position: relative;
   width: 75px;
   border: none;
@@ -92,7 +75,7 @@ export const StopButton = styled.div`
   :hover {
     background-color: #77b7dd;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 4px;
   }
 
   * {
@@ -106,9 +89,9 @@ export const StopButton = styled.div`
   .fa-video-slash {
     color: #ee2560;
   }
-  `;
+`;
 
-  export const SwitchMenu = styled.div`
+export const SwitchMenu = styled.div`
   display: flex;
   position: absolute;
   width: 20px;

@@ -1,17 +1,5 @@
-import React, { ReactElement, useCallback } from 'react';
-import { Bar, CameraButton, Center, ChatButton, FaIcon, Left, Right, ScreenButton, StopButton, SwitchList, SwitchMenu } from './styles';
-
-interface BottomBarProps {
-  clickChat: (e: any) => void,
-  goToBack: (e: any) => void,
-  toggleCameraAudio: (e: any) => void,
-  userVideoAudio: any,
-  clickScreenSharing: () => void,
-  screenShare: boolean,
-  videoDevices: any,
-  showVideoDevices: boolean,
-  setShowVideoDevices: (state: boolean) => void
-}
+import React from 'react';
+import { Bar, Button, Center, FaIcon, Left, Right, ShareScreenButton, StopButton, SwitchList } from './styles';
 
 const BottomBar = ({
   clickChat,
@@ -23,18 +11,12 @@ const BottomBar = ({
   videoDevices,
   showVideoDevices,
   setShowVideoDevices
-}: BottomBarProps): ReactElement => {
-  const handleToggle = useCallback(
-    (e) => {
-      setShowVideoDevices(!showVideoDevices);
-    },
-    [setShowVideoDevices]
-  );
+}) => {
 
   return (
     <Bar>
       <Left>
-        <CameraButton onClick={toggleCameraAudio} data-switch='video'>
+        <Button onClick={toggleCameraAudio} data-switch='video'>
           <div>
             {userVideoAudio.video ? (
               <FaIcon className='fas fa-video'></FaIcon>
@@ -43,21 +25,21 @@ const BottomBar = ({
             )}
           </div>
           Camera
-        </CameraButton>
+        </Button>
         {showVideoDevices && (
           <SwitchList>
             {videoDevices.length > 0 &&
-              videoDevices.map((device: any) => {
+              videoDevices.map((device) => {
                 console.log(device);
                 return <div>{device.label}</div>;
               })}
             <div>Switch Camera</div>
           </SwitchList>
         )}
-        <SwitchMenu onClick={handleToggle}>
+        {/* <SwitchMenu onClick={handleToggle}>
           <i className='fas fa-angle-up'></i>
-        </SwitchMenu>
-        <CameraButton onClick={toggleCameraAudio} data-switch='audio'>
+        </SwitchMenu> */}
+        <Button onClick={toggleCameraAudio} data-switch='audio'>
           <div>
             {userVideoAudio.audio ? (
               <FaIcon className='fas fa-microphone'></FaIcon>
@@ -66,23 +48,23 @@ const BottomBar = ({
             )}
           </div>
           Audio
-        </CameraButton>
+        </Button>
       </Left>
       <Center>
-        <ChatButton onClick={clickChat}>
+        <Button onClick={clickChat}>
           <div>
             <FaIcon className='fas fa-comments'></FaIcon>
           </div>
           Chat
-        </ChatButton>
-        <ScreenButton onClick={clickScreenSharing}>
+        </Button>
+        <ShareScreenButton onClick={clickScreenSharing}>
           <div>
             <FaIcon
               className={`fas fa-desktop ${screenShare ? 'sharing' : ''}`}
             ></FaIcon>
           </div>
           Share Screen
-        </ScreenButton>
+        </ShareScreenButton>
       </Center>
       <Right>
         <StopButton onClick={goToBack}>Stop</StopButton>
@@ -91,4 +73,4 @@ const BottomBar = ({
   );
 };
 
-export {BottomBar};
+export default BottomBar;

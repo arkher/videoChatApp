@@ -1,37 +1,27 @@
-import React, { useEffect, useState, useRef, ReactElement } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import socket from '../../socket';
 import { BottomInput, ChatArea, ChatContainer, Message, MessageList, TopHeader, UserMessage } from './styles';
 
-interface ChatProps {
-  display: boolean;
-  roomId: number;
-}
-
-interface IMessage {
-  sender: string;
-  msg: string;
-}
-
-const Chat = ({ display, roomId }: ChatProps): ReactElement => {
+const Chat = ({ display, roomId }) => {
   const currentUser = sessionStorage.getItem('user');
-  const [msgs, setMsgs] = useState<any>([]);
-  const messagesEndRef = useRef<any>(null);
-  const inputRef = useRef<any>();
+  const [msg, setMsg] = useState([]);
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef();
   
   useEffect(() => {
     socket.on('FE-receive-message', ({ msg, sender }) => {
-      setMsgs([...msgs, { sender, msg }]);
+      setMsg((msgs) => [...msgs, { sender, msg }]);
     });
   }, []);
 
   // Scroll to Bottom of Message List
-  useEffect(() => {scrollToBottom()}, [msgs])
+  useEffect(() => {scrollToBottom()}, [msg])
 
   const scrollToBottom = () => {
-    messagesEndRef?.current?.scrollIntoView({ behavior: 'smooth'});
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth'});
   }
 
-  const sendMessage = (e: React.ChangeEvent<HTMLInputElement> & React.KeyboardEvent<HTMLDivElement>) => {
+  const sendMessage = (e) => {
     if (e.key === 'Enter') {
       const msg = e.target.value;
 
@@ -47,8 +37,8 @@ const Chat = ({ display, roomId }: ChatProps): ReactElement => {
       <TopHeader>Group Chat Room</TopHeader>
       <ChatArea>
         <MessageList>
-          {msgs &&
-            msgs.map(({ sender, msg }: IMessage, idx: number) => {
+          {msg &&
+            msg.map(({ sender, msg }, idx) => {
               if (sender !== currentUser) {
                 return (
                   <Message key={idx}>
@@ -77,4 +67,4 @@ const Chat = ({ display, roomId }: ChatProps): ReactElement => {
   );
 };
 
-export {Chat};
+export default Chat;
